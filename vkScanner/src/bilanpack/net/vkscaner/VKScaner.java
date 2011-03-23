@@ -21,7 +21,7 @@ import java.net.UnknownHostException;
 import java.util.concurrent.TimeUnit;
 
 /**
- *
+ * Начнм работать!
  * @author Pavlyha
  */
 public class VKScaner implements Runnable{

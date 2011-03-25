@@ -11,8 +11,8 @@ public class Logger {
 	private FileOutputStream fileStream = null;
 	private String logPath = "";
 
-	public Logger(String Path) {
-		logPath = Path;
+	public Logger(String path) {
+		logPath = path;
 		Date today = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyy");
 		fileName = String.valueOf(String.valueOf((new StringBuffer()).append(

@@ -16,7 +16,7 @@ public class Block {
 	/** Правая нижняя точка блока	 */
 	private Point toPoint;
 	
-	private TreeMap<Integer, Integer> gistogram; 
+	private Map<Integer, Integer> gistogram; 
 	
 	
 	
@@ -43,7 +43,7 @@ public class Block {
 	}
 
 
-	public void setGistogram(TreeMap<Integer, Integer> gistogram) {
+	public void setGistogram(Map<Integer, Integer> gistogram) {
 		this.gistogram = gistogram;
 	}
 

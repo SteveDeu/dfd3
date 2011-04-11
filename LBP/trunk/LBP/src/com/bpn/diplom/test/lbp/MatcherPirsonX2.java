@@ -7,7 +7,7 @@ public class MatcherPirsonX2 {
 		return getDistanceX2(trueFace.getFaceVector(), someFace.getFaceVector());
 	}
 	
-	public static Long getDistanceX2(int[] trueFace, int[] someFace ){
+	public static Long getDistanceX2(final int[] trueFace, final int[] someFace ){
 		if(trueFace == null || someFace == null)
 			return null;
 		if(trueFace.length != someFace.length)
@@ -19,7 +19,7 @@ public class MatcherPirsonX2 {
 			System.out.print(trueFace[i]+" "); 
 		}
 		
-		System.out.println("\nHELLO someFace");
+		System.out.println("\nHELLO someFace size: "+someFace.length);
 		for(int i = 0; i < someFace.length; i++ ){
 			System.out.print(someFace[i]+" "); 
 		}

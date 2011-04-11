@@ -30,6 +30,21 @@ public class LBPImage {
 		new  java.awt.Point(-1, 0)
 	};
 	
+	public static final Point [] AROUND_12_POINTS = new  java.awt.Point[]{
+		new  java.awt.Point(-2, 1),
+		new  java.awt.Point(-1, 2),
+		new  java.awt.Point( 0, 2),
+		new  java.awt.Point( 1, 2),
+		new  java.awt.Point( 2, 1),
+		new  java.awt.Point( 2, 0),
+		new  java.awt.Point( 2,-1),
+		new  java.awt.Point( 1,-2),
+		new  java.awt.Point( 0,-2),
+		new  java.awt.Point(-1,-2),
+		new  java.awt.Point(-2,-1),
+		new  java.awt.Point(-2, 0)
+	};
+	
 	
 	private File fileImg;
 	private Raster raster;
@@ -85,17 +100,17 @@ public class LBPImage {
 		System.out.println("HELLO\n\n");
 		
 		
-		LBPImage img1 = new LBPImage("img/whiteSquare.bmp", LBPImage.AROUND_8_POINTS, 7);
-		LBPImage img2 = new LBPImage("img/whiteSquare.bmp", LBPImage.AROUND_8_POINTS, 7);
-		
-		System.out.println(MatcherPirsonX2.getDistanceX2(img1, img2));
+		LBPImage img1 = new LBPImage("img/39.JPG", LBPImage.AROUND_12_POINTS, 7);
+		LBPImage img2 = new LBPImage("img/40.JPG", LBPImage.AROUND_12_POINTS, 7);
+//		System.out.println(img2.getFaceVector()[10]);
+		System.out.println("\ngetDistanceX2 = "+MatcherPirsonX2.getDistanceX2(img1, img2));
 		
 	}
 	
 	
 	public LBPImage(String pathImg, Point [] around, int countBlock){
 		this.timeStart = System.currentTimeMillis();
-		System.out.println("Работа с файлом: "+pathImg+" Количество точек: "+around.length);
+		System.out.println("Работа с файлом: "+pathImg+" Количество точек окружности для ЛБШ: "+around.length);
 		this.fileImg = new File(pathImg);
 		try {
 			if(!fileImg.exists())
@@ -142,6 +157,8 @@ public class LBPImage {
 		int toY = heigth - (heigth - heigthBlock*countBlock - fromY);
 		blocks = new Block[countBlock * countBlock];
 		int index = 0;
+		System.out.println("Разбиваем лицо на " + countBlock+"*"+ countBlock + " блоков. Размер блока: " + widthBlock+"*"+heigthBlock);
+		System.out.println("Позиционирование блоков: x:"+fromX+"-"+toX+" y:"+fromY+"-"+toY);
 		for(int y = 0; y < countBlock; y++){
 			for(int x = 0; x < countBlock; x++){
 				Point from = new Point(fromX + (x*widthBlock), fromY +  + (y*heigthBlock));
@@ -154,8 +171,8 @@ public class LBPImage {
 			}
 //			System.out.println();
 		}	
-		System.out.println("Разбиваем лицо на " + countBlock+"*"+ countBlock + " блоков. Размер блока: " + widthBlock+"*"+heigthBlock);
-		System.out.println("Позиционирование блоков: x:"+fromX+"-"+toX+" y:"+fromY+"-"+toY);
+		
+
 //		this.printImageBlocks(blocks);
 		
 		this.faceVector = buildFaceVector(blocks);
@@ -165,11 +182,12 @@ public class LBPImage {
 	}
 	
 	private int[] buildFaceVector(Block[] blocks){
-		int[] vector = new int[countBlock * countBlock * this.setUniformPattern.size()];
+		int[] vector = new int[countBlock * countBlock * (this.setUniformPattern.size() + 1)];
 		int i = 0;
 		for(Block block : blocks){
 			for(int val : block.getGistogram().values()){
 				vector[i] = val; 
+				i++;
 			}
 		}
 		return vector;
@@ -177,7 +195,7 @@ public class LBPImage {
 	
 	private void fillBlockGistogram(Block block){
 		// создали гистограму  и сразу ее заполним нулями
-		TreeMap<Integer, Integer> gistogram = new TreeMap<Integer, Integer>();
+		Map<Integer, Integer> gistogram = new TreeMap<Integer, Integer>();
 		gistogram.put(this.keyOfNotUniformCode, 1);
 		for(Integer codeUP : this.setUniformPattern){
 			gistogram.put(codeUP, 1);
@@ -191,12 +209,15 @@ public class LBPImage {
 			for(int x = fromX; x < toX; x++){
 				int code = imageMatrix[y][x].getCodeLBP();
 				Integer oldCount = gistogram.get(code);
+				if(oldCount == null)
+					oldCount = gistogram.get(keyOfNotUniformCode);
 				if(this.setUniformPattern.contains(code))
 					gistogram.put(code, oldCount+1);
 				else
-					gistogram.put(this.keyOfNotUniformCode, oldCount+1);
+					gistogram.put(this.keyOfNotUniformCode,	oldCount+1);
 			}
 		}
+//		System.out.println(gistogram);
 	}
 	
 	/** Из растра строим матрицу изображения, каждая точка имеет координаты, цвет и ЛБШ код.

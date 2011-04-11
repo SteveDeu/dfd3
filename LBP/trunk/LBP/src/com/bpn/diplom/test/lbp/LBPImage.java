@@ -30,6 +30,7 @@ public class LBPImage {
 		new  java.awt.Point(-1, 0)
 	};
 	
+	
 	private File fileImg;
 	private Raster raster;
 	/** width of raster	 */

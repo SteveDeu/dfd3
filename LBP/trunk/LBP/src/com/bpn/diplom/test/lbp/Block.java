@@ -6,6 +6,7 @@ import java.util.TreeMap;
 
 public class Block {
 	
+	
 	/** Ќомер блока на изображении по горизонтали */
 	private int numX;
 	/** Ќомер блока на изображении по вертикали */

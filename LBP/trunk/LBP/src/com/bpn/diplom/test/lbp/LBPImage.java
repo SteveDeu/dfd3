@@ -7,7 +7,10 @@ import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -96,7 +99,7 @@ public class LBPImage {
 //	public static void main(String [] args){
 //	}
 	
-	public static void main(String [] args){
+	public static void main(String [] args) throws UnsupportedEncodingException{
 		System.out.println("HELLO\n\n");
 		
 		
@@ -108,7 +111,9 @@ public class LBPImage {
 	}
 	
 	
-	public LBPImage(String pathImg, Point [] around, int countBlock){
+	public LBPImage(String pathImg, Point [] around, int countBlock) throws UnsupportedEncodingException{
+		System.out.println("=================================================================");
+		String print;
 		this.timeStart = System.currentTimeMillis();
 		System.out.println("Работа с файлом: "+pathImg+" Количество точек окружности для ЛБШ: "+around.length);
 		this.fileImg = new File(pathImg);
@@ -171,14 +176,10 @@ public class LBPImage {
 			}
 //			System.out.println();
 		}	
-		
-
 //		this.printImageBlocks(blocks);
-		
 		this.faceVector = buildFaceVector(blocks);
-		
 		long time = System.currentTimeMillis();
-		System.out.println("Всего времени: "+(time-timeStart)+"мc. Время расчетов: " + (time-timeStartCalculate)+"мс");
+		System.out.println("------------Всего времени: "+(time-timeStart)+"мc. Время расчетов: " + (time-timeStartCalculate)+"мс-----------");
 	}
 	
 	private int[] buildFaceVector(Block[] blocks){

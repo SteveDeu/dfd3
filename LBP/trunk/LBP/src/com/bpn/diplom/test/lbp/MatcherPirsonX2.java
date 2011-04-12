@@ -14,15 +14,15 @@ public class MatcherPirsonX2 {
 			return null;
 		long x2 = 0;
 		
-		System.out.println("HELLO trueFace");
-		for(int i = 0; i < trueFace.length; i++ ){
-			System.out.print(trueFace[i]+" "); 
-		}
-		
-		System.out.println("\nHELLO someFace size: "+someFace.length);
-		for(int i = 0; i < someFace.length; i++ ){
-			System.out.print(someFace[i]+" "); 
-		}
+//		System.out.println("HELLO trueFace");
+//		for(int i = 0; i < trueFace.length; i++ ){
+//			System.out.print(trueFace[i]+" "); 
+//		}
+//		
+//		System.out.println("\nHELLO someFace size: "+someFace.length);
+//		for(int i = 0; i < someFace.length; i++ ){
+//			System.out.print(someFace[i]+" "); 
+//		}
 		
 		for(int i = 0; i < trueFace.length; i++ ){
 			x2 += ((someFace[i] - trueFace[i])*(someFace[i] - trueFace[i]))/(someFace[i] + trueFace[i]); 

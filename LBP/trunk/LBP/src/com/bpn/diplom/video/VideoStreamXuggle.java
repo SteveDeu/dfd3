@@ -96,7 +96,7 @@ import com.xuggle.xuggler.video.ConverterFactory;
  * @param args Must contain two strings: a FFMPEG driver name and a device name
  *   (which is dependent on the FFMPEG driver).
  */
-public class DisplayWebcamVideo
+public class VideoStreamXuggle
 {
 	private Dimension size;
 
@@ -113,13 +113,13 @@ public class DisplayWebcamVideo
 //		
 //	}
 	
-	public DisplayWebcamVideo(){
+	public VideoStreamXuggle(){
 	}
 	
 	/** Выбор операционной системы.  
 	 * @param selectOS 0 - для windows, 1 - для linux
 	 */
-	public DisplayWebcamVideo(int selectOS, Dimension size, ProcessingImage processing){
+	public VideoStreamXuggle(int selectOS, Dimension size, ProcessingImage processing){
 		this.processing = processing;
 		this.size = size;
 		if (selectOS == 0){
@@ -133,7 +133,7 @@ public class DisplayWebcamVideo
 		mScreen = new VideoImage();
 	}
 	
-	public DisplayWebcamVideo(int selectOS, int width, int height, ProcessingImage processing){
+	public VideoStreamXuggle(int selectOS, int width, int height, ProcessingImage processing){
 		this(selectOS, new Dimension(width, height), processing);
 	}
 	

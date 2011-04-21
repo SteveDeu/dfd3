@@ -18,14 +18,18 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import org.javacv.nui.ex.FaceDetection;
+
 import com.bpn.diplom.lbp.LBPImage;
 import com.bpn.diplom.lbp.MatcherPirsonX2;
-import com.bpn.diplom.video.DisplayWebcamVideo;
+import com.bpn.diplom.video.VideoStreamCV;
+import com.bpn.diplom.video.VideoStreamXuggle;
+import com.googlecode.javacv.cpp.opencv_core.IplImage;
 
 
 public class ProcessingImageLBP implements ProcessingImage{
 	
-	static int stepSize = 3;
+	static int stepSize = 300;
 	static int step;
 	
 	static int[] storedFaceVector;
@@ -33,18 +37,19 @@ public class ProcessingImageLBP implements ProcessingImage{
 	static long maxDistance;
 	static long currentDistance;
 	
-	static Dimension videoSize = new Dimension(320, 240);
+	static Dimension videoSize = new Dimension(352, 288);
 	static Dimension focusSize = new Dimension(80, 100);
 	static Point focus = new Point((int)(videoSize.getWidth() - focusSize.getWidth())/2, 
 								   (int)(videoSize.getHeight() - focusSize.getHeight())/2);
 	
 	static final LBPImage faceVectorBuilder = new LBPImage(LBPImage.AROUND_16_POINTS, 7);
 	static ProcessingImage processing = new ProcessingImageLBP();
-	static final DisplayWebcamVideo wcam = new DisplayWebcamVideo(0, videoSize, processing);
+	static final VideoStreamXuggle wcam = new VideoStreamXuggle(0, videoSize, processing);
+	static final VideoStreamCV wcamCV = new VideoStreamCV(processing);
 	
 	public static void main(String [] args){
 		
-		JFrame frame = wcam.getmScreen();
+		JFrame frame = wcamCV.getWindow();
 		frame.setBounds(20, 80, 300, 300);
 		
 		Container c = frame.getContentPane();
@@ -81,30 +86,54 @@ public class ProcessingImageLBP implements ProcessingImage{
 			}
 		});
 		
-		wcam.showVideoProcessing();
+		wcamCV.showVideoProcessing();
 	}
 
 	
 	
 	@Override
 	public void processingImage(BufferedImage image) {
-		WritableRaster r =wcam.getCurrentImage().getRaster(); 
-		imgToGray2(r);
+//		WritableRaster r =wcam.getCurrentImage().getRaster(); 
+//		imgToGray2(r);
 
 		if(step == stepSize){
-			int [] faceVector = faceVectorBuilder.getFaceVectorByRaster(wcam.getCurrentImage().getData().createChild((int)focus.getX(), (int)focus.getY(), (int)focusSize.getWidth(), (int)focusSize.getHeight(),0, 0, null));
-			if(storedFaceVector != null)
-				currentDistance = MatcherPirsonX2.getDistanceX2(storedFaceVector, faceVector, faceVectorBuilder);		
-			if(currentDistance < minDistance)
-				minDistance = currentDistance;
-			if(currentDistance > maxDistance)
-				maxDistance = currentDistance;
+//			long time = System.currentTimeMillis();
+//			IplImage frame = IplImage.createFrom(image);
+//			System.out.println(System.currentTimeMillis() - time + "\t= createFrom"); time = System.currentTimeMillis();
+//			FaceDetection.drawFaceRectangle(frame);
+//			System.out.println(System.currentTimeMillis() - time + "\t= drawFaceRectangle");time = System.currentTimeMillis();
+//			image.setData(frame.getBufferedImage().getRaster());
+//			System.out.println(System.currentTimeMillis() - time + "\t= setData");time = System.currentTimeMillis();
+//			int [] faceVector = faceVectorBuilder.getFaceVectorByRaster(wcam.getCurrentImage().getData().createChild((int)focus.getX(), (int)focus.getY(), (int)focusSize.getWidth(), (int)focusSize.getHeight(),0, 0, null));
+//			if(storedFaceVector != null)
+//				currentDistance = MatcherPirsonX2.getDistanceX2(storedFaceVector, faceVector, faceVectorBuilder);		
+//			if(currentDistance < minDistance)
+//				minDistance = currentDistance;
+//			if(currentDistance > maxDistance)
+//				maxDistance = currentDistance;
 			step = 0;
 		} else
 			step++;
 		
 		drawPanel((Graphics2D) image.getGraphics());
+		
+		
 	}
+	
+	
+	@Override
+	public IplImage processingImage(IplImage image) {
+		BufferedImage bi = image.getBufferedImage();
+		processingImage(bi);
+		return IplImage.createFrom(bi);
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -157,5 +186,9 @@ public class ProcessingImageLBP implements ProcessingImage{
 		}
 		
 	}
+
+
+
+	
 	
 }

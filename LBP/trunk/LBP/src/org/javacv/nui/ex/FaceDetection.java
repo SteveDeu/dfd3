@@ -29,7 +29,7 @@ public class FaceDetection {
 	private static final String OUT_FILE = "markedFaces.jpg";
 
 	public static void main(String[] args) {
-		args = new String[]{"group.jpg"};
+		args = new String[]{"img/g1.jpg"};
 		
 		if (args.length != 1) {
 			System.out.println("Usage: run FaceDetection <input-file>");

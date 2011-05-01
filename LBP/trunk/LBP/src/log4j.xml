@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="HtmlAppender" class="org.apache.log4j.FileAppender">
+	     <param name="File" value="log.html" />
+	     <layout class="org.apache.log4j.HTMLLayout"/>
+	</appender>	
+
+	<appender name="TxtAppender" class="org.apache.log4j.FileAppender">
+	     <param name="File" value="log.txt" />
+	     <layout class="com.bpn.diplom.gui.utils.DateLogLayout"/>
+	</appender>
+
+	<appender name="XMLAppender" class="org.apache.log4j.FileAppender">
+	     <param name="File" value="log.xml" />
+	     <layout class="org.apache.log4j.xml.XMLLayout"/>
+	</appender>
+
+
+
+	
+	<logger name="bilanpack.log4j_test">
+		<level value="debug" />
+	</logger>
+	<root>
+		<appender-ref ref="TxtAppender" />		
+		<appender-ref ref="HtmlAppender" />
+	    <appender-ref ref="XMLAppender" />
+	</root>
+</log4j:configuration>

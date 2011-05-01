@@ -1,0 +1,48 @@
+28.04.2011:  чт.23:50 --> make main window: VirtualDesktop
+28.04.2011:  чт.23:50 --> не найден файл с содержимим меню
+
+	java.io.FileNotFoundException: menu.xml (Не удается найти указанный файл)
+28.04.2011:  чт.23:50 --> make main window: VirtualDesktop
+28.04.2011:  чт.23:50 --> не найден файл с содержимим меню
+
+	java.io.FileNotFoundException: \menu.xml (Не удается найти указанный файл)
+28.04.2011:  чт.23:51 --> make main window: VirtualDesktop
+28.04.2011:  чт.23:51 --> не найден файл с содержимим меню
+
+	java.io.FileNotFoundException: menu.xml (Не удается найти указанный файл)
+28.04.2011:  чт.23:54 --> make main window: VirtualDesktop
+28.04.2011:  чт.23:54 --> РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…
+	java.lang.ClassNotFoundException: com.warehouse.windows.listeners.SystemExitActionListener
+28.04.2011:  чт.23:54 --> make main window: VirtualDesktop
+28.04.2011:  чт.23:54 --> РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…
+	java.lang.ClassNotFoundException: com.warehouse.windows.listeners.SystemExitActionListener
+28.04.2011:  чт.23:55 --> make main window: VirtualDesktop
+28.04.2011:  чт.23:55 --> РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…
+	java.lang.ClassNotFoundException: com.warehouse.windows.listeners.SystemExitActionListener
+28.04.2011:  чт.23:56 --> make main window: VirtualDesktop
+28.04.2011:  чт.23:56 --> ! ! ! ! ! Р”Рѕ СЃРІРёРґР°РЅРёСЏ ! ! ! ! !
+28.04.2011:  чт.23:56 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:01 --> in Resuorce not found key: com.warehouse.windows.VirtualDesktop.title string
+	java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key com.warehouse.windows.VirtualDesktop.title
+29.04.2011:  пт.00:01 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:01 --> ! ! ! ! ! Р”Рѕ СЃРІРёРґР°РЅРёСЏ ! ! ! ! !
+29.04.2011:  пт.00:11 --> in Resuorce not found key: com.warehouse.windows.VirtualDesktop.title string
+	java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key com.warehouse.windows.VirtualDesktop.title
+29.04.2011:  пт.00:11 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:13 --> in Resuorce not found key: com.warehouse.windows.VirtualDesktop.title string
+	java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key com.warehouse.windows.VirtualDesktop.title
+29.04.2011:  пт.00:13 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:15 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:16 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:17 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:18 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:19 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:20 --> ! ! ! ! ! До свидания ! ! ! ! !
+29.04.2011:  пт.00:21 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:23 --> make main window: VirtualDesktop
+29.04.2011:  пт.00:23 --> make main window: VirtualDesktop
+29.04.2011:  пт.12:06 --> make main window: VirtualDesktop
+29.04.2011:  пт.12:08 --> make main window: VirtualDesktop
+29.04.2011:  пт.12:10 --> make main window: VirtualDesktop
+29.04.2011:  пт.12:11 --> make main window: VirtualDesktop
+29.04.2011:  пт.12:24 --> make main window: VirtualDesktop

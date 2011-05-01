@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menubar name="menubar">
+	<menu name="file" text="Файл" mnemonic="Ф" enabled="true">
+		<menuitem name="param" 		
+				  text="Параметры"	
+				  accelerator="O" 
+				  enabled="false"	
+				  class="" />
+		<menuitem name="separator"/>
+		<menuitem name="video" 		
+				  text="Відео"	
+				  accelerator="v" 
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuFileVideoListener" />
+		<menuitem name="separator"/>
+		<menuitem name="exit" 
+				  text='Вихід'		
+				  accelerator="Q" 
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.SystemExitActionListener" />
+	</menu>
+	<menu name="user" text="Користувачі" mnemonic="к" enabled="true">
+		<menuitem name="db" 		
+				  text="База данних"	
+				  accelerator="б" 
+				  enabled="false"	
+				  class="" />
+		<menuitem name="separator"/>
+		
+	</menu>
+</menubar>
+

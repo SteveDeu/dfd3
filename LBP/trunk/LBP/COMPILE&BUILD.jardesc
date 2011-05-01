@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="WINDOWS-1251" standalone="no"?>
+<jardesc>
+    <jar path="LocalBinaryPattern/build/LBP.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/LocalBinaryPattern/COMPILE&amp;BUILD.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/LocalBinaryPattern/MANIFEST.MF" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/LocalBinaryPattern/img/2.bmp"/>
+        <file path="/LocalBinaryPattern/img/digits.bmp"/>
+        <file path="/LocalBinaryPattern/img/1-1.bmp"/>
+        <file path="/LocalBinaryPattern/MANIFEST.MF"/>
+        <file path="/LocalBinaryPattern/img/1-2.bmp"/>
+        <folder path="/LocalBinaryPattern/img/src"/>
+        <javaElement handleIdentifier="=LocalBinaryPattern/src"/>
+        <file path="/LocalBinaryPattern/img/digits.gif"/>
+    </selectedElements>
+</jardesc>

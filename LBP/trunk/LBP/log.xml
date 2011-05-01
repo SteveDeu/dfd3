@@ -1,0 +1,322 @@
+<log4j:event logger="root" timestamp="1304023659515" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023659531" level="ERROR" thread="main">
+<log4j:message><![CDATA[не найден файл с содержимим меню
+]]></log4j:message>
+<log4j:throwable><![CDATA[java.io.FileNotFoundException: menu.xml (Не удается найти указанный файл)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.bpn.diplom.gui.VirtualDesktop.createMenuXML(VirtualDesktop.java:104)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:59)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023720296" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023720296" level="ERROR" thread="main">
+<log4j:message><![CDATA[не найден файл с содержимим меню
+]]></log4j:message>
+<log4j:throwable><![CDATA[java.io.FileNotFoundException: menu.xml (Не удается найти указанный файл)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.bpn.diplom.gui.VirtualDesktop.createMenuXML(VirtualDesktop.java:104)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:59)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023802937" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023802937" level="ERROR" thread="main">
+<log4j:message><![CDATA[не найден файл с содержимим меню
+]]></log4j:message>
+<log4j:throwable><![CDATA[java.io.FileNotFoundException: menu.xml (Не удается найти указанный файл)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.bpn.diplom.gui.VirtualDesktop.createMenuXML(VirtualDesktop.java:104)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:59)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023835593" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023835609" level="ERROR" thread="main">
+<log4j:message><![CDATA[не найден файл с содержимим меню
+]]></log4j:message>
+<log4j:throwable><![CDATA[java.io.FileNotFoundException: \menu.xml (Не удается найти указанный файл)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.bpn.diplom.gui.VirtualDesktop.createMenuXML(VirtualDesktop.java:104)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:59)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023890656" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304023890671" level="ERROR" thread="main">
+<log4j:message><![CDATA[не найден файл с содержимим меню
+]]></log4j:message>
+<log4j:throwable><![CDATA[java.io.FileNotFoundException: menu.xml (Не удается найти указанный файл)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.bpn.diplom.gui.VirtualDesktop.createMenuXML(VirtualDesktop.java:104)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:59)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024044890" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024044953" level="ERROR" thread="main">
+<log4j:message><![CDATA[РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…]]></log4j:message>
+<log4j:throwable><![CDATA[java.lang.ClassNotFoundException: com.warehouse.windows.listeners.SystemExitActionListener
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.adjustProperties(XMLMenuLoader.java:179)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.parseMenuItem(XMLMenuLoader.java:148)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.startElement(XMLMenuLoader.java:100)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at javax.xml.parsers.SAXParser.parse(Unknown Source)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader.parse(XMLMenuLoader.java:54)
+	at com.bpn.diplom.gui.VirtualDesktop.createMenuXML(VirtualDesktop.java:105)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:59)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024099812" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024099843" level="ERROR" thread="main">
+<log4j:message><![CDATA[РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…]]></log4j:message>
+<log4j:throwable><![CDATA[java.lang.ClassNotFoundException: com.warehouse.windows.listeners.SystemExitActionListener
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.adjustProperties(XMLMenuLoader.java:179)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.parseMenuItem(XMLMenuLoader.java:148)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.startElement(XMLMenuLoader.java:100)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at javax.xml.parsers.SAXParser.parse(Unknown Source)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader.parse(XMLMenuLoader.java:54)
+	at com.bpn.diplom.gui.VirtualDesktop.createMenuXML(VirtualDesktop.java:105)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:59)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024113375" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024113390" level="ERROR" thread="main">
+<log4j:message><![CDATA[РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р…РїС—Р… РїС—Р…РїС—Р…РїС—Р…РїС—Р…]]></log4j:message>
+<log4j:throwable><![CDATA[java.lang.ClassNotFoundException: com.warehouse.windows.listeners.SystemExitActionListener
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.adjustProperties(XMLMenuLoader.java:179)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.parseMenuItem(XMLMenuLoader.java:148)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader$XMLParser.startElement(XMLMenuLoader.java:100)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at javax.xml.parsers.SAXParser.parse(Unknown Source)
+	at com.bpn.diplom.gui.utils.XMLMenuLoader.parse(XMLMenuLoader.java:54)
+	at com.bpn.diplom.gui.VirtualDesktop.createMenuXML(VirtualDesktop.java:105)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:59)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024162343" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024165468" level="INFO" thread="AWT-EventQueue-0">
+<log4j:message><![CDATA[! ! ! ! ! Р”Рѕ СЃРІРёРґР°РЅРёСЏ ! ! ! ! !]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024170250" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024468343" level="ERROR" thread="main">
+<log4j:message><![CDATA[in Resuorce not found key: com.warehouse.windows.VirtualDesktop.title string]]></log4j:message>
+<log4j:throwable><![CDATA[java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key com.warehouse.windows.VirtualDesktop.title
+	at java.util.ResourceBundle.getObject(Unknown Source)
+	at java.util.ResourceBundle.getString(Unknown Source)
+	at com.bpn.diplom.gui.utils.Resource.getPackageString(Resource.java:42)
+	at com.bpn.diplom.gui.utils.Resource.getString(Resource.java:63)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:54)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024468484" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304024482406" level="INFO" thread="AWT-EventQueue-0">
+<log4j:message><![CDATA[! ! ! ! ! Р”Рѕ СЃРІРёРґР°РЅРёСЏ ! ! ! ! !]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025090937" level="ERROR" thread="main">
+<log4j:message><![CDATA[in Resuorce not found key: com.warehouse.windows.VirtualDesktop.title string]]></log4j:message>
+<log4j:throwable><![CDATA[java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key com.warehouse.windows.VirtualDesktop.title
+	at java.util.ResourceBundle.getObject(Unknown Source)
+	at java.util.ResourceBundle.getString(Unknown Source)
+	at com.bpn.diplom.gui.utils.Resource.getPackageString(Resource.java:42)
+	at com.bpn.diplom.gui.utils.Resource.getString(Resource.java:63)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:54)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025091078" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025238703" level="ERROR" thread="main">
+<log4j:message><![CDATA[in Resuorce not found key: com.warehouse.windows.VirtualDesktop.title string]]></log4j:message>
+<log4j:throwable><![CDATA[java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key com.warehouse.windows.VirtualDesktop.title
+	at java.util.ResourceBundle.getObject(Unknown Source)
+	at java.util.ResourceBundle.getString(Unknown Source)
+	at com.bpn.diplom.gui.utils.Resource.getPackageString(Resource.java:42)
+	at com.bpn.diplom.gui.utils.Resource.getString(Resource.java:63)
+	at com.bpn.diplom.gui.VirtualDesktop.<init>(VirtualDesktop.java:54)
+	at com.bpn.diplom.gui.VirtualDesktop.getInstance(VirtualDesktop.java:70)
+	at com.bpn.diplom.gui.VirtualDesktop.main(VirtualDesktop.java:129)
+]]></log4j:throwable>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025238843" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025310187" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025411984" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025468156" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025523296" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025590906" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025659875" level="INFO" thread="AWT-EventQueue-0">
+<log4j:message><![CDATA[! ! ! ! ! До свидания ! ! ! ! !]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025662921" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025786234" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304025786296" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304067998687" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304068137484" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304068256718" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304068285421" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1304069086656" level="DEBUG" thread="main">
+<log4j:message><![CDATA[make main window: VirtualDesktop]]></log4j:message>
+</log4j:event>
+

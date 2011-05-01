@@ -1,0 +1,10 @@
+#Fri Apr 29 00:22:19 EEST 2011
+eclipse.preferences.version=1
+encoding//src/com/bpn/diplom/gui/VirtualDesktop.java=UTF-8
+encoding//src/com/bpn/diplom/gui/listeners/EscapeExitKeyListener.java=UTF-8
+encoding//src/com/bpn/diplom/gui/listeners/SystemExitActionListener.java=UTF-8
+encoding//src/com/bpn/diplom/gui/utils/XMLMenuLoader.java=Cp1251
+encoding//src/com/bpn/diplom/lbp/LBPImage.java=UTF-8
+encoding//src/com/bpn/diplom/processing/ProcessingImageLBP.java=UTF-8
+encoding//src/message.properties=UTF-8
+encoding//src/strings.properties=UTF-8

@@ -1,7 +1,0 @@
-Image img;
-...
-BufferedImage bufImg = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_RGB);
-
-bufImg.getGraphics().drawImage(img, 0, 0, null);
-
-ImageIO.write(bufImg, "JPEG", new File("c:/temp/image.jpg"));

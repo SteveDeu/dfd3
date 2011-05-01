@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: com.bpn.diplom.test.lbp.Main
-X-COMMENT: Main-Class will be added automatically by build

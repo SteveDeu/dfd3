@@ -1,32 +1,48 @@
 package com.bpn.diplom.gui.listeners;
 
+import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JDialog;
+import javax.swing.JInternalFrame;
 
 import org.apache.log4j.Logger;
 
-public class EscapeExitKeyListener implements KeyListener{
+import com.bpn.diplom.gui.VirtualDesktop;
+
+public class EscapeExitKeyListener implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
-		
+
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		
-		if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-			if(e.getSource() instanceof java.awt.Window){
-				((java.awt.Window)e.getSource()).dispose();
+		System.out.println("beforef");
+		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			System.out.println("esc");
+			try {
+				Component comp = (Component) e.getSource();
+				while (comp != null) {
+					if (comp instanceof JInternalFrame) {
+						JInternalFrame frame = (JInternalFrame) comp;
+						frame.dispose();
+						VirtualDesktop.getInstance().getDesktop().remove(comp);
+						break;
+					} else {
+						comp = comp.getParent();
+					}
+				}
+			} catch (Throwable ex) {
+				ex.printStackTrace();
 			}
-			Logger.getRootLogger().info("! ! ! ! ! До свидания ! ! ! ! !");
-			System.exit(0);
+
 		}
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		
+
 	}
 }

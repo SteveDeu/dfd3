@@ -1,10 +1,12 @@
 package com.bpn.diplom.gui.listeners;
 
-import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+import javax.swing.event.InternalFrameAdapter;
+
 import org.apache.log4j.Logger;
 
-public class WindowAdapterClose extends WindowAdapter {
+public class WindowAdapterClose extends InternalFrameAdapter {
 	public void windowClosing(WindowEvent we) {
 			
 			

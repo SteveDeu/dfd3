@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
  */
 public class SystemExitActionListener extends AbstractAction{
 	
+	
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource() instanceof java.awt.Window){

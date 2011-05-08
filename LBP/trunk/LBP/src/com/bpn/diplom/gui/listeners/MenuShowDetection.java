@@ -20,11 +20,12 @@ public class MenuShowDetection extends AbstractAction {
 			public void run() {
 				try {
 					File file;
-					file = GUIUtils.openImageFileChooser(VirtualDesktop.getInstance());
+//					file = GUIUtils.openImageFileChooser(VirtualDesktop.getInstance());
 //					file = new File("g:\\p.jpg");
+					file = new File("g:\\group.jpg");
 					if(file != null){
 						Image src = ImageIO.read(file);
-						new ShowImageShowDetection(src);
+						new ShowImageShowDetection(file.getName(), src);
 					}
 				} catch (IOException e1) {
 					e1.printStackTrace();

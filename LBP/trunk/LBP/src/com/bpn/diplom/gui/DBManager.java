@@ -5,20 +5,34 @@ import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.event.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.Raster;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
-import java.io.Serializable;
-import java.util.List;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
-import com.bpn.diplom.gui.listeners.*;
-import com.bpn.diplom.gui.utils.*;
-import com.bpn.diplom.dao.*;
+import com.bpn.diplom.dao.DAOLBP;
+import com.bpn.diplom.dao.DAOLBPImpl;
+import com.bpn.diplom.dao.EntityLBPUser;
+import com.bpn.diplom.gui.listeners.CloseActionListener;
+import com.bpn.diplom.gui.listeners.EscapeExitKeyListener;
+import com.bpn.diplom.gui.listeners.WindowAdapterClose;
+import com.bpn.diplom.gui.utils.BoxLayoutUtils;
+import com.bpn.diplom.gui.utils.GUITools;
+import com.bpn.diplom.gui.utils.Resource;
+import com.bpn.diplom.gui.utils.TableDataModel;
 
 /**
  * Окно для входа в систему
@@ -63,6 +77,7 @@ public class DBManager extends JInternalFrame {
 		this.pack();
 		GUITools.centeringWindow(this, this.getDesktopPane());
 		this.fillTable();
+		this.setIconifiable(true);
 		this.setVisible(true);
 		this.setResizable(true);
 	}

@@ -2,6 +2,7 @@ package com.bpn.diplom.gui;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.beans.PropertyVetoException;
 import java.io.File;
 import java.io.IOException;
@@ -49,8 +50,26 @@ public abstract class AbstractShowImage extends JInternalFrame {
 	protected JButton[] buttons = new JButton[0];
 	private JButton btnCancel;
 
+	public AbstractShowImage() {
+		this(null);
+	}
+	
 	public AbstractShowImage(Image image) {
 		super();
+		createObject(image);
+	}
+	
+	public AbstractShowImage(String titel, Image image) {
+		this(image);
+		this.setTitle(titel);
+	}
+	
+	public AbstractShowImage(String titel, BufferedImage image) {
+		this(image);
+		this.setTitle(titel);
+	}
+	
+	private void createObject(Image image){
 		this.image = image;
 		this.desktop = VirtualDesktop.getInstance().getDesktop();
 		this.desktop.add(this);
@@ -117,16 +136,15 @@ public abstract class AbstractShowImage extends JInternalFrame {
 	public void setImage(Image image){
 		if(image == null)
 			return;
-		this.image = image;
 
-		GUITools.setComponentSize(panelImage, image.getWidth(null), image.getHeight(null)-25);
+		GUITools.setComponentSize(panelImage, image.getWidth(null), image.getHeight(null));
 		
 		int w = Math.min(SCROLL_W, image.getWidth(null) + 3);
 		int h = Math.min(SCROLL_H, image.getHeight(null) - 9);
 		GUITools.setComponentSize(scrollImage, w, h);
-		
-		scrollImage.setViewportView(panelImage);
-		this.pack();
+		this.image = image;
+		this.scrollImage.setViewportView(panelImage);
+//		this.pack();
 		this.repaint();
 	}
 	
@@ -151,17 +169,22 @@ public abstract class AbstractShowImage extends JInternalFrame {
 
 			@Override
 			public void componentResized(ComponentEvent ev) {
-				GUITools.setComponentSize(scrollImage, 
-						AbstractShowImage.this.getWidth(), 
-						AbstractShowImage.this.getHeight() - 95
-				);
+				setSizeScrollImage();
 			}
 
 		});
 		
+		
 		settingEvents();
 	}
 	 
+	private void setSizeScrollImage(){
+		GUITools.setComponentSize(scrollImage, 
+				AbstractShowImage.this.getWidth(), 
+				AbstractShowImage.this.getHeight() - 95
+		);
+		AbstractShowImage.this.repaint();
+	}
 	
 	protected abstract void init();
 	protected abstract void settingEvents();

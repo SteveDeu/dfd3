@@ -194,9 +194,21 @@ public class GUITools {
 	
 	
 	
+	
+	public static BufferedImage getGrayImage(BufferedImage image){
+		return (BufferedImage)getGrayImage((Image)image);
+	}
+	
+	public static Image getGrayImage(Image image){
+		BufferedImage result = new BufferedImage(image.getWidth(null), image.getHeight(null), BufferedImage.TYPE_BYTE_GRAY);
+		((Graphics2D)(result.getGraphics())).drawImage((BufferedImage) image, null, 0, 0);
+		return result;
+	}
+	
 	public static BufferedImage rotateImageCenter(BufferedImage img, double angleInRadians){
 		return rotateImage(img, angleInRadians, img.getWidth()/2, img.getHeight()/2);
 	}
+	
 	public static BufferedImage rotateImage(BufferedImage img, double angleInRadians, double anchorx, double anchory){
 		AffineTransform at = AffineTransform.getRotateInstance(angleInRadians, anchorx, anchory);
 		AffineTransformOp aop = new AffineTransformOp(at, AffineTransformOp.TYPE_BICUBIC);
@@ -204,4 +216,6 @@ public class GUITools {
 		((Graphics2D)(result.getGraphics())).drawImage(img, aop, 0, 0);
 		return result;
 	}
+	
+	
 }

@@ -53,5 +53,34 @@
 				  class="com.bpn.diplom.gui.listeners.MenuShowDetection" 
 		/>
 	</menu>
+	
+	<menu name="window" text="Вікна" enabled="true">
+		<menuitem name="closeAll" 		
+				  accelerator="W"
+				  text="Закрити всі"	
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuWindowCloseAll" 
+		/>
+		<menuitem name="minimizeAll" 		
+				  text="Згорнути всі"	
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuWindowMinimizeAll" 
+		/>
+		<menuitem name="maximizeAll" 		
+				  text="Розгорнути всі"	
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuWindowMaximizedAll" 
+		/>
+		<menuitem name="closeMinimize" 		
+				  text="Закрити усі згорнуті"	
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuWindowCloseMinimize" 
+		/>
+		<menuitem name="closeMaximize" 		
+				  text="Закрити усі розгорнуті"	
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuWindowCloseMaximized" 
+		/>
+	</menu>
 </menubar>
 

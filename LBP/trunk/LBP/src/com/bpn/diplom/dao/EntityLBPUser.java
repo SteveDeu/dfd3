@@ -24,6 +24,10 @@ public class EntityLBPUser {
 //	`face_image` MEDIUMBLOB NULL ,
 	
 	
+	public EntityLBPUser() {
+		super();
+	}
+	
 	public EntityLBPUser(int id, String name, Date dateAdd, Image face) {
 		super();
 		this.id = id;

@@ -18,6 +18,8 @@ import com.googlecode.javacv.cpp.opencv_core.IplImage;
 public class Util {
 
 	
+	
+	
 	public static void imgToGray(WritableRaster wr, Rectangle area){
 		imgToGray(wr, new Point(area.x, area.y), area.width, area.height);
 	}

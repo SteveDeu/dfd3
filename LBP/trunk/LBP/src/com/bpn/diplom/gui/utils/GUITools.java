@@ -4,6 +4,9 @@ package com.bpn.diplom.gui.utils;
 import org.apache.log4j.Logger;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -18,11 +21,13 @@ public class GUITools {
 	public static final int MARGIN_BUTTON = 12;
 	
 	
-	/**
-	 * метод принимает массив ссылок на кнопки JButton и 
-	 * придает им нужный отступ от границ слева и справа
-	 * @param buttons массив ссылок на кнопки JButton
-	 */
+	public static void createRecommendedMargin(JButton button) {
+		Insets margin = button.getMargin();
+		margin.left = MARGIN_BUTTON;
+		margin.right = MARGIN_BUTTON;
+		button.setMargin(margin);
+	}
+	
 	public static void createRecommendedMargin(JButton[] buttons) {
 		for (int i=0; i < buttons.length; i++) {
 			Insets margin = buttons[i].getMargin();
@@ -185,5 +190,18 @@ public class GUITools {
 			table.getColumnModel().getColumn(i).setMaxWidth((int)(tableWidth*((float)widthArray[i]/100))+variation);
 			table.getColumnModel().getColumn(i).setPreferredWidth((int)(tableWidth*((float)widthArray[i]/100)));
 		}
+	}
+	
+	
+	
+	public static BufferedImage rotateImageCenter(BufferedImage img, double angleInRadians){
+		return rotateImage(img, angleInRadians, img.getWidth()/2, img.getHeight()/2);
+	}
+	public static BufferedImage rotateImage(BufferedImage img, double angleInRadians, double anchorx, double anchory){
+		AffineTransform at = AffineTransform.getRotateInstance(angleInRadians, anchorx, anchory);
+		AffineTransformOp aop = new AffineTransformOp(at, AffineTransformOp.TYPE_BICUBIC);
+		BufferedImage result = new BufferedImage(img.getWidth(null), img.getHeight(null), img.getType());
+		((Graphics2D)(result.getGraphics())).drawImage(img, aop, 0, 0);
+		return result;
 	}
 }

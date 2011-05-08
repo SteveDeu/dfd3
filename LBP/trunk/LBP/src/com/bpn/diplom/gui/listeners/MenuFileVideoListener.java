@@ -6,13 +6,13 @@ import javax.swing.AbstractAction;
 
 import org.apache.log4j.Logger;
 
-import com.bpn.diplom.processing.ProcessingImageLBP;
+import com.bpn.diplom.processing.ProcessingVideoLBP;
 
 public class MenuFileVideoListener extends AbstractAction{
 	
 	public void actionPerformed(ActionEvent e) {
 		
-		ProcessingImageLBP.main(null);
+		ProcessingVideoLBP.main(null);
 		
 	}
 	

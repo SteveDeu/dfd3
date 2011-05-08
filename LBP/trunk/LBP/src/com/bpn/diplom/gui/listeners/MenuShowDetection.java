@@ -8,11 +8,11 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 
-import com.bpn.diplom.gui.ShowImageAddUser;
+import com.bpn.diplom.gui.ShowImageShowDetection;
 import com.bpn.diplom.gui.VirtualDesktop;
 import com.bpn.diplom.gui.utils.GUIUtils;
 
-public class MenuFilePhotoListener extends AbstractAction {
+public class MenuShowDetection extends AbstractAction {
 
 	public void actionPerformed(ActionEvent e) {
 
@@ -20,11 +20,11 @@ public class MenuFilePhotoListener extends AbstractAction {
 			public void run() {
 				try {
 					File file;
-//					file = GUIUtils.openImageFileChooser(VirtualDesktop.getInstance());
-					file = new File("g:\\p.jpg");
+					file = GUIUtils.openImageFileChooser(VirtualDesktop.getInstance());
+//					file = new File("g:\\p.jpg");
 					if(file != null){
 						Image src = ImageIO.read(file);
-						new ShowImageAddUser(src);
+						new ShowImageShowDetection(src);
 					}
 				} catch (IOException e1) {
 					e1.printStackTrace();

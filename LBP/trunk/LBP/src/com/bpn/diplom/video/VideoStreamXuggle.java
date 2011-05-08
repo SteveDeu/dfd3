@@ -28,7 +28,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
 
-import com.bpn.diplom.processing.ProcessingImage;
+import com.bpn.diplom.processing.IProcessingImage;
 import com.xuggle.xuggler.ICodec;
 import com.xuggle.xuggler.IContainer;
 import com.xuggle.xuggler.IContainerFormat;
@@ -103,7 +103,7 @@ public class VideoStreamXuggle
 	private String driverName = "vfwcap";
 	private String deviceName=  "0";
 	
-	private ProcessingImage processing;
+	private IProcessingImage processing;
 	
 	/** The window we'll draw the video on. */
 	private VideoImage mScreen = null;
@@ -119,7 +119,7 @@ public class VideoStreamXuggle
 	/** Выбор операционной системы.  
 	 * @param selectOS 0 - для windows, 1 - для linux
 	 */
-	public VideoStreamXuggle(int selectOS, Dimension size, ProcessingImage processing){
+	public VideoStreamXuggle(int selectOS, Dimension size, IProcessingImage processing){
 		this.processing = processing;
 		this.size = size;
 		if (selectOS == 0){
@@ -133,7 +133,7 @@ public class VideoStreamXuggle
 		mScreen = new VideoImage();
 	}
 	
-	public VideoStreamXuggle(int selectOS, int width, int height, ProcessingImage processing){
+	public VideoStreamXuggle(int selectOS, int width, int height, IProcessingImage processing){
 		this(selectOS, new Dimension(width, height), processing);
 	}
 	

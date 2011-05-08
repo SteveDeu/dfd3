@@ -4,10 +4,12 @@ import java.awt.image.BufferedImage;
 
 import com.googlecode.javacv.cpp.opencv_core.IplImage;
 
-public interface ProcessingImage {
+import com.bpn.diplom.dao.*;
+
+public interface IProcessingImage {
 	
 	
-	public BufferedImage processingImage(BufferedImage image);
+	public EntityLBPUser processingImage(BufferedImage image);
 	
 	public IplImage processingImage(IplImage image);
 

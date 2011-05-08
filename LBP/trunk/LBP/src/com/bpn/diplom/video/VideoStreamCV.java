@@ -10,7 +10,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
-import com.bpn.diplom.processing.ProcessingImage;
+import com.bpn.diplom.processing.IProcessingImage;
 import com.googlecode.javacv.CanvasFrame;
 import com.googlecode.javacv.OpenCVFrameGrabber;
 import com.googlecode.javacv.cpp.opencv_core.IplImage;
@@ -18,12 +18,12 @@ import com.googlecode.javacv.cpp.opencv_core.IplImage;
 public class VideoStreamCV {
 	private static volatile boolean isRunning = true;
 	
-	private ProcessingImage processing;
+	private IProcessingImage processing;
 
 	private JFrame window;
 	private CanvasFrame canvas;
 	
-	public VideoStreamCV(ProcessingImage p){
+	public VideoStreamCV(IProcessingImage p){
 		this.processing = p;
 		canvas = new CanvasFrame("Camera Capture");
 		window = (JFrame)canvas;

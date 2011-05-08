@@ -1,9 +1,13 @@
 package com.bpn.diplom.gui;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.File;
-import java.io.FileInputStream;
+import java.awt.event.WindowListener;
+import java.awt.event.WindowStateListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -40,30 +44,29 @@ public class VirtualDesktop extends JFrame{
 	private final static String TITLE ="VirtualDesktop.title";
 	private final static String FILE_MENU_XML="menu.xml";
 	
+	private static VirtualDesktop instance;
+	
 	
 	private final Logger log = Logger.getRootLogger();
-		
-	private final int WIDTH = 800;
-	private final int HEIGTH = 600;
-	private static VirtualDesktop instance;
+	private final JDesktopPane desktop = new JDesktopPane();
 
-	JDesktopPane desktop = new JDesktopPane(); 
-	
+	private JSplitPane splitPane;
 
 	private VirtualDesktop(){
 		super(Resource.getString(TITLE));
 		log.debug("make main window: VirtualDesktop");
-		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(WIDTH, HEIGTH);
-		setJMenuBar(createMenuXML());
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setSizeAsScreen(false);
+		this.setJMenuBar(createMenuXML());
 		JPanel content = createGUI(); 
-		add(content);
-		settingEvents();
-		GUITools.centeringWindow(this);
-		setVisible(true);
+		this.add(content);
+		this.settingEvents();
+		if(this.getExtendedState() != JFrame.MAXIMIZED_BOTH)
+			GUITools.centeringWindow(this);
+		this.setVisible(true);
 	}
 	
+
 	
 	public static VirtualDesktop getInstance(){
 		if(instance == null){
@@ -72,12 +75,21 @@ public class VirtualDesktop extends JFrame{
 		return VirtualDesktop.instance;
 	}
 
+	private void setSizeAsScreen(boolean fullScreen){
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize(); 
+		int x = dimension.width; 
+		int y = dimension.height; 
+		this.setSize(x-x/10, y - y/10) ; 
+		this.setLocation(0,0);
+		if(fullScreen)
+			this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	};
 	
 	/** возвращает главную панель с
 	* созданным расположением
 	*/
 	private JPanel createGUI() {
-		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+		splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		JPanel panelMain = BoxLayoutUtils.createHorizontalPanel();
 		JPanel panelDesktop = BoxLayoutUtils.createVerticalPanel();
 		JPanel panelMore = BoxLayoutUtils.createVerticalPanel();
@@ -85,14 +97,11 @@ public class VirtualDesktop extends JFrame{
 		int b = 3;
 		panelMain.setBorder(BorderFactory.createEmptyBorder(b,b,b,b));
 		panelDesktop.add(desktop);
-		
 		splitPane.setLeftComponent(panelDesktop);
 		splitPane.setRightComponent(panelMore);
 		splitPane.setDividerSize(10);
-		splitPane.setDividerLocation(((Number)((this.getSize().getWidth()-(this.getSize().getWidth()/5)))).intValue());
-		
+		splitPane.setDividerLocation(this.getWidth());
 		panelMain.add(splitPane);
-
 		return panelMain;
 	}
 
@@ -115,7 +124,27 @@ public class VirtualDesktop extends JFrame{
 	
 	private void settingEvents(){
 		
-		addWindowListener(new WindowAdapter() {
+//		this.addPropertyChangeListener(new PropertyChangeListener(){
+//			@Override
+//			public void propertyChange(PropertyChangeEvent ev) {
+//				System.out.println(ev.getPropertyName()+" oldValue:" + ev.getOldValue() + " newVal:"+ev.getNewValue());
+//			}
+//		});
+//		
+//		this.addWindowStateListener(new WindowStateListener(){
+//			@Override
+//			public void windowStateChanged(WindowEvent arg0) {
+//				if( VirtualDesktop.this.getExtendedState() == JFrame.MAXIMIZED_BOTH
+//					|| VirtualDesktop.this.getExtendedState() == JFrame.MAXIMIZED_HORIZ)
+//				{
+//					splitPane.setDividerLocation(Toolkit.getDefaultToolkit().getScreenSize().getWidth());
+//				} else {
+//					splitPane.setDividerLocation(VirtualDesktop.this.getWidth());
+//				}	
+//			}
+//		});
+		
+		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
 				dispose();
 				System.exit(0);
@@ -124,6 +153,16 @@ public class VirtualDesktop extends JFrame{
 		
 		
 	}
+	
+	public synchronized JDesktopPane getDesktop() {
+		return desktop;
+	}
+
+
+//	public synchronized void setDesktop(JDesktopPane desktop) {
+//		this.desktop = desktop;
+//	}
+//	
 	
 	public static void main(String[] args) throws IOException{
 		getInstance();

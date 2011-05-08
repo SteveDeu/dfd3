@@ -6,28 +6,52 @@
 				  text="Параметры"	
 				  accelerator="O" 
 				  enabled="false"	
-				  class="" />
+				  class="" 
+		/>
+		
 		<menuitem name="separator"/>
+		
 		<menuitem name="video" 		
 				  text="Відео"	
 				  accelerator="v" 
 				  enabled="true"	
-				  class="com.bpn.diplom.gui.listeners.MenuFileVideoListener" />
+				  class="com.bpn.diplom.gui.listeners.MenuFileVideoListener" 
+		/>
+		
+		<menuitem name="photo" 		
+				  text="Фото"	
+				  accelerator="F" 
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuFilePhotoListener" 
+		/>
+		
 		<menuitem name="separator"/>
+		
 		<menuitem name="exit" 
 				  text='Вихід'		
 				  accelerator="Q" 
 				  enabled="true"	
-				  class="com.bpn.diplom.gui.listeners.SystemExitActionListener" />
+				  class="com.bpn.diplom.gui.listeners.SystemExitActionListener" 
+		/>
 	</menu>
-	<menu name="user" text="Користувачі" mnemonic="к" enabled="true">
+
+	<menu name="user" text="Користувачі" enabled="true">
 		<menuitem name="db" 		
 				  text="База данних"	
-				  accelerator="б" 
-				  enabled="false"	
-				  class="" />
+				  accelerator="D" 
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuDBContent" />
 		<menuitem name="separator"/>
 		
+	</menu>
+	
+	<menu name="show" text="Демонстрація" enabled="true">
+		<menuitem name="eyeDetect" 		
+				  text="Детекція обличчя"	
+				  accelerator="E" 
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuShowDetection" 
+		/>
 	</menu>
 </menubar>
 

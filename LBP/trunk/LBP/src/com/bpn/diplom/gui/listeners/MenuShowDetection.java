@@ -22,7 +22,8 @@ public class MenuShowDetection extends AbstractAction {
 					File file;
 //					file = GUIUtils.openImageFileChooser(VirtualDesktop.getInstance());
 //					file = new File("g:\\p.jpg");
-					file = new File("g:\\group.jpg");
+//					file = new File("g:\\group.jpg");
+					file = new File("g:\\ps17.jpg");
 					if(file != null){
 						Image src = ImageIO.read(file);
 						new ShowImageShowDetection(file.getName(), src);

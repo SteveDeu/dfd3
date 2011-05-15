@@ -217,5 +217,15 @@ public class GUITools {
 		return result;
 	}
 	
+	public static Point getCenterPoint(Rectangle rect){
+		return new Point(rect.x + rect.width/2, rect.y + rect.height/2);
+	}
+	
+	public static BufferedImage extractImage(BufferedImage img, Rectangle area){
+		BufferedImage result = new BufferedImage((int)area.getWidth(), (int)area.getHeight(), BufferedImage.TYPE_INT_RGB);
+		((Graphics2D)result.getGraphics()).drawImage(img, 0, 0, (int)area.getWidth(), (int)area.getHeight(), 
+				(int)area.x, (int)area.y, (int)(area.x + area.getWidth()), (int)(area.y + area.getHeight()), null);
+		return result;
+	}
 	
 }

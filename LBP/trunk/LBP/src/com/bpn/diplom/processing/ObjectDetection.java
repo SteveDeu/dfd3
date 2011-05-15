@@ -59,6 +59,8 @@ public class ObjectDetection
 	// scaling factor to reduce size of input image
 	private int scaleFace = 6;
 	private int scaleEye = 1;
+	private int scaleNose = 1;
+	private int scaleMouth = 1;
 	
 	private String cascadeFaceFile;
 	private String cascadeEyeFile;
@@ -187,11 +189,11 @@ public class ObjectDetection
 	
 	
 	public Rectangle[] getNoseCoordinates(BufferedImage origImage){
-		return getObjectCoordinates(IplImage.createFrom(origImage), cascadeNose, scaleEye, 0, CV_HAAR_FIND_BIGGEST_OBJECT);
+		return getObjectCoordinates(IplImage.createFrom(origImage), cascadeNose, scaleNose, 0, CV_HAAR_FIND_BIGGEST_OBJECT);
 	}
 	
 	public Rectangle[] getMouthCoordinates(BufferedImage origImage){
-		return getObjectCoordinates(IplImage.createFrom(origImage), cascadeMouth, scaleEye, 0, CV_HAAR_FIND_BIGGEST_OBJECT);
+		return getObjectCoordinates(IplImage.createFrom(origImage), cascadeMouth, scaleMouth, 0, CV_HAAR_FIND_BIGGEST_OBJECT);
 	}
 	
 	

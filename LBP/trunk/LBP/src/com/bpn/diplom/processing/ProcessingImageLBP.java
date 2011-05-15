@@ -8,6 +8,7 @@ import com.bpn.diplom.gui.utils.GUITools;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,11 +20,13 @@ public class ProcessingImageLBP //implements ProcessingImage
 {
 	
 	private int countBlock = 7; 
-	private ObjectDetection faceDetector = new ObjectDetection();
+	private FacesDetection facesDetector = new FacesDetection();
 	private LBPImage faceVectorBuilder8;
 	private LBPImage faceVectorBuilder12;
 	private LBPImage faceVectorBuilder16;
 
+	
+	
 	public ProcessingImageLBP(){
 		super();
 		faceVectorBuilder8  = new LBPImage(LBPImage.AROUND_8_POINTS, countBlock);
@@ -40,7 +43,7 @@ public class ProcessingImageLBP //implements ProcessingImage
 	
 
 	//@Override
-	public Object[] processingFaceImage(BufferedImage faceImage, Map<String, Image> imagesForShowProcessing){
+	public EntityLBPUser processingFaceImage(BufferedImage faceImage, Map<String, Image> imagesForShowProcessing){
 		EntityLBPUser user = null;
 		BufferedImage face = null;
 		try{
@@ -52,51 +55,25 @@ public class ProcessingImageLBP //implements ProcessingImage
 			user.setVector8(faceVectorBuilder8.getFaceVectorByRaster(face.getData()));
 			user.setVector12(faceVectorBuilder12.getFaceVectorByRaster(face.getData()));
 			user.setVector16(faceVectorBuilder16.getFaceVectorByRaster(face.getData()));
-			user.setImageFace(faceImage);
+			user.setImageFaceArea(faceImage);
+			user.setImageFace(face);
 
 			drawFaceGrid(faceImage);
 			drawPriority(faceImage);
 		}catch(Throwable c){
 			c.printStackTrace();
 		}
-		return new Object[]{face, user};
+		return user;
 	}
 	
 	//@Override
-	public Object[] processingImage(BufferedImage image, Map<String, Image> imagesForShowProcessing){
-		EntityLBPUser user = null;
-		BufferedImage face = null;
-		BufferedImage faceOriginal = null;
-		try{
-			Rectangle[] facesAreas = faceDetector.getFaceCoordinates(image);
-			if(facesAreas.length > 0){
-				Rectangle faceArea = facesAreas[0];
-				faceOriginal = new BufferedImage(faceArea.width, faceArea.height, BufferedImage.TYPE_INT_RGB);
-				((Graphics2D)faceOriginal.getGraphics()).drawImage(image, 0, 0, faceArea.width, faceArea.height, 
-						faceArea.x, faceArea.y, faceArea.x + faceArea.width, faceArea.y + faceArea.height, null);
-				
-				face = createPreparingFaceImage(faceOriginal, imagesForShowProcessing);
-				new ShowImageSimple(image);
-				new ShowImageSimple(faceOriginal);
-				
-				user = new EntityLBPUser();
-				user.setVector8(faceVectorBuilder8.getFaceVectorByRaster(face.getData()));
-				user.setVector12(faceVectorBuilder12.getFaceVectorByRaster(face.getData()));
-				user.setVector16(faceVectorBuilder16.getFaceVectorByRaster(face.getData()));
-				user.setImageFace(faceOriginal);
-				
-				drawFacesGrid(new Rectangle(0,0,face.getWidth(), face.getHeight()), (Graphics2D)face.getGraphics());
-				drawPriority(new Rectangle(0,0,face.getWidth(), face.getHeight()), (Graphics2D)face.getGraphics());
-				
-				new ShowImageSimple(face);
-			} else{
-				System.out.println(" not find");
-			}
-			
-		}catch(Throwable c){
-			c.printStackTrace();
+	public List<EntityLBPUser> processingImage(BufferedImage image, Map<String, Image> imagesForShowProcessing){
+		List<Image> faces = facesDetector.detect(image, true, imagesForShowProcessing);
+		List<EntityLBPUser> users = new ArrayList<EntityLBPUser>();
+		for(Image face : faces){
+			users.add(processingFaceImage((BufferedImage) face, imagesForShowProcessing));
 		}
-		return new Object[]{face, user};
+		return users;
 	}
 	
 	

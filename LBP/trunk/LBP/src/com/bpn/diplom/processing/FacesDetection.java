@@ -100,10 +100,11 @@ public class FacesDetection {
 				continue;
 			
 			if(forRecognize){
-				Rectangle resFace = new Rectangle(face.x + faceArea.x, face.y + faceArea.y, face.width, face.height);
-				BufferedImage resultFace = GUITools.extractImage(faceImage, resFace);
+//				Rectangle resFace = new Rectangle(face.x + faceArea.x, face.y + faceArea.y, face.width, face.height);
+//				Rectangle resFace = new Rectangle(face.x + faceArea.x, face.y + faceArea.y, face.width, face.height);
+				BufferedImage resultFace = GUITools.extractImage(faceImage, face);
 				result.add(resultFace);
-				imagesForShowProcessing.put("Виділене із вхідного зображення обличчя",GUITools.extractImage(faceImage, resFace));
+				imagesForShowProcessing.put("Виділене із вхідного зображення обличчя",GUITools.extractImage(faceImage, face));
 			} else {
 				result.add(faceImage); 
 			}

@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -21,6 +24,7 @@ public class ShowImageAddUser extends AbstractShowImage{
 
 	JButton btnAddUser;
 	
+	Map<String, Image> showProcesingImages = new TreeMap<String, Image>();
 	
 	public ShowImageAddUser(Image image) {
 		super(image);
@@ -37,24 +41,26 @@ public class ShowImageAddUser extends AbstractShowImage{
 		btnAddUser.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String name = JOptionPane.showInputDialog(ShowImageAddUser.this, "¬вед≥ть ≥м€ користувача");
-//				String name = "";
-				addUser(name);
+				addUser();
 			}});
 		
 	}
 
 
-	private void addUser(String name){
-		if(name == null)
-			return;
+	private void addUser(){
 		ProcessingImageLBP processing = new ProcessingImageLBP(); 
-		Object[] result = processing.processingImage((BufferedImage) this.getImage());
-		Image imageFace = (Image) result[0];
-		this.setImage(imageFace);
+		List<EntityLBPUser> users = processing.processingImage((BufferedImage) this.getImage(), showProcesingImages);
 		
-		EntityLBPUser user = (EntityLBPUser) result[1];
-		user.setName(name);
-		userManager.addUser(user);
+		for(Map.Entry<String, Image> entry : showProcesingImages.entrySet()){
+			new ShowImageSimple(entry.getKey(), (BufferedImage) entry.getValue());
+		}		
+		
+//		for(EntityLBPUser user : users){
+//			this.setImage(user.getImageFaceArea());
+//			String name = JOptionPane.showInputDialog(ShowImageAddUser.this, "¬вед≥ть ≥м€ користувача");
+//			user.setName(name);
+//			userManager.addUser(user);
+//		}
+		
 	}
 }

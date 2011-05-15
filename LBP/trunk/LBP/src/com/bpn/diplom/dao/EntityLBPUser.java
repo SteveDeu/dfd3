@@ -13,6 +13,7 @@ public class EntityLBPUser {
 	private int[] vector8;
 	private int[] vector12;
 	private int[] vector16;
+	private Image imageFaceArea;
 	private Image imageFace;
 	
 	
@@ -33,7 +34,7 @@ public class EntityLBPUser {
 		this.id = id;
 		this.name = name;
 		this.dateAdd = dateAdd;
-		this.imageFace = face;
+		this.imageFaceArea = face;
 	}
 	
 	public EntityLBPUser(String name, int[] vector8, int[] vector12, int[] vector16) {
@@ -50,11 +51,11 @@ public class EntityLBPUser {
 		this.vector8 = vector8;
 		this.vector12 = vector12;
 		this.vector16 = vector16;
-		this.imageFace = face;
+		this.imageFaceArea = face;
 	}
 	
 	public EntityLBPUser(int id, String name, Date dateAdd, int[] vector8,
-			int[] vector12, int[] vector16, Image imageFace) {
+			int[] vector12, int[] vector16, Image imageFaceArea) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -62,7 +63,7 @@ public class EntityLBPUser {
 		this.vector8 = vector8;
 		this.vector12 = vector12;
 		this.vector16 = vector16;
-		this.imageFace = imageFace;
+		this.imageFaceArea = imageFaceArea;
 	}
 	
 	
@@ -80,7 +81,7 @@ public class EntityLBPUser {
 		return "EntityLBPUser ["+" id=" + id + " name=" + name + ", dateAdd=" + dateAdd
 				+ ",\nvector8=" + Arrays.toString(vector8) + ",\nvector12="
 				+ Arrays.toString(vector12) + ",\nvector16="
-				+ Arrays.toString(vector16) + ",\nimageFace=" + imageFace + "]";
+				+ Arrays.toString(vector16) + ",\nimageFaceArea=" + imageFaceArea + "]";
 	}
 
 	public String getName() {
@@ -115,6 +116,12 @@ public class EntityLBPUser {
 	}
 	public void setVector16(int[] vector16) {
 		this.vector16 = vector16;
+	}
+	public Image getImageFaceArea() {
+		return imageFaceArea;
+	}
+	public void setImageFaceArea(Image imageFaceArea) {
+		this.imageFaceArea = imageFaceArea;
 	}
 	public Image getImageFace() {
 		return imageFace;

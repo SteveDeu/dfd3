@@ -140,35 +140,22 @@ public class DBManager extends JInternalFrame {
 		btnRemove.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				if(table.getSelectedRow() < 0)
-//					return;
-//				int count = userManager.removeUser((Integer) table.getValueAt(table.getSelectedRow(), 0));
-//				if(count > 0)
-//					fillTable();
+				if(table.getSelectedRowCount() < 1)
+					return;
 				
-				
-				
-//				class SBufferedImage extends BufferedImage implements Serializable{
-//
-//					public SBufferedImage(int width, 
-//	                         int height, 
-//	                         int imageType){
-//						super(width, height, imageType);
-//					}
-//					/**
-//					 * 
-//					 */
-//					private static final long serialVersionUID = 1L;
-//					
-//				}
-				
-				try {
-					userManager.addUser(new EntityLBPUser(
-							"new Super", new int[]{1,8}, new int[]{1,2, 33, 12}, new int[]{1,18}, ImageIO.read(new File("g:\\group.jpg"))));
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				for(int row : table.getSelectedRows()){
+					userManager.removeUser((Integer) table.getValueAt(row, 0));
 				}
+				fillTable();
+				
+				
+//				try {
+//					userManager.addUser(new EntityLBPUser(
+//							"new Super", new int[]{1,8}, new int[]{1,2, 33, 12}, new int[]{1,18}, ImageIO.read(new File("g:\\group.jpg"))));
+//				} catch (IOException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
 				
 				
 			}
@@ -181,6 +168,10 @@ public class DBManager extends JInternalFrame {
 			public void mouseClicked(MouseEvent e) {
 				if(e.getClickCount() < 2)
 					return;
+				
+				
+				System.out.println((Image)model.getValueAt(table.getSelectedRow(), 3));
+				
 				ShowImageSimple show = new ShowImageSimple((Image)model.getValueAt(table.getSelectedRow(), 3));
 				show.setTitle(Resource.getString("SimpleShowImage.user") + " " + model.getValueAt(table.getSelectedRow(), 1));
 			}
@@ -206,6 +197,8 @@ public class DBManager extends JInternalFrame {
 //						}});
 //				}
 //			};
+			System.out.println(user.getImageFace());
+
 			model.addRow(
 					new Object[]{
 							user.getId(), user.getName(), user.getDateTimeAdd(), user.getImageFace() 

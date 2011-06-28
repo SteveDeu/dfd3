@@ -5,8 +5,8 @@
 		<menuitem name="param" 		
 				  text="Параметры"	
 				  accelerator="O" 
-				  enabled="false"	
-				  class="" 
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuFileSettings" 
 		/>
 		
 		<menuitem name="separator"/>
@@ -16,13 +16,6 @@
 				  accelerator="v" 
 				  enabled="true"	
 				  class="com.bpn.diplom.gui.listeners.MenuFileVideoListener" 
-		/>
-		
-		<menuitem name="photo" 		
-				  text="Фото"	
-				  accelerator="F" 
-				  enabled="true"	
-				  class="com.bpn.diplom.gui.listeners.MenuFilePhotoListener" 
 		/>
 		
 		<menuitem name="separator"/>
@@ -37,12 +30,30 @@
 
 	<menu name="user" text="Користувачі" enabled="true">
 		<menuitem name="db" 		
-				  text="База данних"	
+				  text="База даних"	
 				  accelerator="D" 
 				  enabled="true"	
-				  class="com.bpn.diplom.gui.listeners.MenuDBContent" />
+				  class="com.bpn.diplom.gui.listeners.MenuUsersDBContent" />
 		<menuitem name="separator"/>
+
+		<menuitem name="photo" 		
+				  text="Новий користувач"	
+				  accelerator="F" 
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuUsersAddListener" 
+		/>
 		
+		<menuitem name="authentification" 		
+				  text="Аутентифікація"	
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuUsersAuthListener" 
+		/>
+		
+		<menuitem name="identiphication" 		
+				  text="Ідентифікація"	
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuUsersIdentifListener" 
+		/>		
 	</menu>
 	
 	<menu name="show" text="Демонстрація" enabled="true">
@@ -51,6 +62,12 @@
 				  accelerator="E" 
 				  enabled="true"	
 				  class="com.bpn.diplom.gui.listeners.MenuShowDetection" 
+		/>
+		<menuitem name="showAuthentification" 		
+				  text="Демонстрація аутентифікації"
+				  accelerator="S"	
+				  enabled="true"	
+				  class="com.bpn.diplom.gui.listeners.MenuShowAuthListener" 
 		/>
 	</menu>
 	

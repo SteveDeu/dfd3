@@ -10,7 +10,7 @@ import javax.swing.AbstractAction;
 
 import com.bpn.diplom.gui.*;
 
-public class MenuDBContent extends AbstractAction {
+public class MenuUsersDBContent extends AbstractAction {
 
 	public void actionPerformed(ActionEvent e) {
 

@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 import com.bpn.diplom.gui.utils.*;
+import com.bpn.diplom.lbp.MatcherPirsonX2;
 import com.bpn.diplom.processing.*;
 import com.bpn.diplom.dao.*;
 
@@ -47,20 +48,20 @@ public class ShowImageAddUser extends AbstractShowImage{
 	}
 
 
-	private void addUser(){
+	private void addUser(){	
+		
 		ProcessingImageLBP processing = new ProcessingImageLBP(); 
 		List<EntityLBPUser> users = processing.processingImage((BufferedImage) this.getImage(), showProcesingImages);
 		
-		for(Map.Entry<String, Image> entry : showProcesingImages.entrySet()){
-			new ShowImageSimple(entry.getKey(), (BufferedImage) entry.getValue());
-		}		
+//		for(Map.Entry<String, Image> entry : showProcesingImages.entrySet()){
+//			new ShowImageSimple(entry.getKey(), (BufferedImage) entry.getValue());
+//		}		
 		
-//		for(EntityLBPUser user : users){
-//			this.setImage(user.getImageFaceArea());
-//			String name = JOptionPane.showInputDialog(ShowImageAddUser.this, "Введіть імя користувача");
-//			user.setName(name);
-//			userManager.addUser(user);
-//		}
-		
-	}
+		for(EntityLBPUser user : users){
+			ShowImageSimple userFace= new ShowImageSimple("Заведення нового обличчя до БД", (BufferedImage) user.getImageFaceArea());
+			String name = JOptionPane.showInputDialog(userFace, "Введіть імя користувача");
+			user.setName(name);
+			userManager.addUser(user);
+		}
+}
 }

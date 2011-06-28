@@ -1,15 +1,33 @@
 package com.bpn.diplom.gui.utils;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Enumeration;
 import java.util.Locale;
+import java.util.Map.Entry;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
+import java.util.TreeMap;
+
+import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
 
+import com.bpn.diplom.gui.VirtualDesktop;
+
 public class Resource{
+	
+	public static final String JDBC_DRIVER = "JDBC_DRIVER";
+	public static final String DB_NAME = "DB_NAME";
+	public static final String PROTOCOL = "PROTOCOL";
+	public static final String IP_ADRESS = "IP_ADRESS";
+	public static final String PORT = "PORT";
+	public static final String USER = "USER";
+	public static final String PASS = "PASS";
+	
 	
 	private static final String ISO8859_1 = "ISO8859-1"; 
 	private static final String UTF8 = "UTF8";
@@ -74,6 +92,36 @@ public class Resource{
 		return resultString;
 	}
 	
+	
+	
+	
+	public static void setConfiguration(String key, String val){
+		TreeMap<String, String> configContent = new TreeMap<String, String>();
+		
+		Enumeration<String> keys = resourceConfiguration.getKeys(); 
+		while(keys.hasMoreElements()){
+			String k = keys.nextElement();
+			configContent.put(k, resourceConfiguration.getString(k));
+		}
+		
+		configContent.put(key, val);
+		
+		try {
+			File file = new File(CONFIGURATION_BUNDLE+".properties");
+			if(!file.isFile() || !file.exists())
+				throw new IOException();
+			file.setWritable(true);
+			FileWriter fw = new FileWriter(file);
+			for(Entry<String, String> row : configContent.entrySet())
+				fw.write(row.getKey()+"="+row.getValue()+"\n");
+			fw.close();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(VirtualDesktop.getInstance(), "Error while save settings.");
+			e.printStackTrace();
+		}
+		return;
+	}
+	
 	/**
 	 * возвращает строку по ключу из resourceMessage
 	 * @param key ключ строки
@@ -96,12 +144,24 @@ public class Resource{
 	}
 	
 	
-//	public static void main(String[] args) throws IOException{
+	public static void main(String[] args){
 //		ResourceString bundle = ResourceString.getBundle("MyResources", Locale.getDefault());
 //	    System.out.println("HelpKey: " + bundle.getString("HelpKey"));	
 //	    bundle = ResourceString.getBundle("MyResources", Locale.ENGLISH);
-//	    System.out.println("HelpKey: " + bundle.getString("HelpKey"));	
-//	}
-
+//	    System.out.println("HelpKey: " + bundle.getString("HelpKey"));
+		
+		System.out.println("Start ");
+		setConfiguration("pass","val1");
+	}
 
 }
+
+//JDBCDriver=com.mysql.jdbc.Driver
+//DBName=lbp
+//protocol=jdbc:mysql
+//IPAdress=localhost
+//port=3306
+//user=root
+//pass=
+
+

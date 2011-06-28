@@ -2,6 +2,9 @@ package com.bpn.diplom.gui.utils;
 
 import java.awt.Component;
 import java.io.File;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -23,6 +26,16 @@ public class GUIUtils {
 	    }
 		
 		return file;
+	}
+	
+	
+	public static boolean isAvalibleFormatImage(File file){
+		String[] parts = file.getName().split("[.]");
+		if(parts.length == 0)
+			return false;
+		Set<String> avalibleFormat = new HashSet<String>();
+		Collections.addAll(avalibleFormat, GUIUtils.avalibleFormat);
+		return avalibleFormat.contains(parts[parts.length - 1]);
 	}
 	
 }
